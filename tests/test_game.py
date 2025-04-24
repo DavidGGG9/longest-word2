@@ -38,5 +38,5 @@ class TestGame:
         """A word that is not in the english dictionary should not be valid"""
         new_game = Game()
         new_game.grid = list('KWIENFUQW')
-        print(__file__)
+        print('hello', __file__)
         assert new_game.is_valid('FEUN') is False

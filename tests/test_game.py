@@ -33,3 +33,10 @@ class TestGame:
         player_input = 'ENTROPY'
 
         assert new_game.is_valid(player_input) == True
+
+    def unknown_word_is_invalid(self):
+        """A word that is not in the english dictionary should not be valid"""
+        new_game = Game()
+        new_game.grid = list('KWIENFUQW')
+        print(__file__)
+        assert new_game.is_valid('FEUN') is False

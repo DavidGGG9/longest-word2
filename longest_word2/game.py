@@ -1,5 +1,6 @@
 import string
 from random import choice
+import requests
 
 class Game:
     def __init__(self) -> list:
@@ -13,8 +14,13 @@ class Game:
         if len(word) == 0:
             return False
         for letter in word:
-            if letter in set(self.grid):
-                continue
-            else:
+            if letter not in set(self.grid):
                 return False
+
+        URL = f'https://dictionary.lewagon.com/{word.lower()}'
+        response = requests.get(URL)
+
+        if response.status_code != 200 or response.json()['found'] is False:
+            return False
+
         return True

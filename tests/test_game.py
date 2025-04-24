@@ -34,7 +34,7 @@ class TestGame:
 
         assert new_game.is_valid(player_input) == True
 
-    def unknown_word_is_invalid(self):
+    def test_unknown_word_is_invalid(self):
         """A word that is not in the english dictionary should not be valid"""
         new_game = Game()
         new_game.grid = list('KWIENFUQW')

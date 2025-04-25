@@ -1,0 +1,5 @@
+runtime: python312
+service: default1
+handlers:
+  - url : /.*
+    script : main.py
